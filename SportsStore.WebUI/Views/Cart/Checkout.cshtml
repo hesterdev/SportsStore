@@ -15,7 +15,29 @@
     </div>
 
     <div class="form-group">
-        <label></label>
+        <label>Address</label>
     </div>
+
+    <div class="form-group">
+        <label>Line 1：</label>
+        @Html.TextBoxFor(x => x.Line1, new { @class="form-control"})
+    </div>
+
+    <div class="form-group">
+        <label>Line 2：</label>
+        @Html.TextBoxFor(x => x.Line2, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Line 3: </label>
+        @Html.TextBoxFor(x=>x.Line3,new { @class="form-control"})
+    </div>
+
+    <div class="form-group">
+        <label>City: </label>
+        @Html.TextBoxFor(x => x.Line3, new { @class = "form-control" })
+    </div>
+
+
 }
 
