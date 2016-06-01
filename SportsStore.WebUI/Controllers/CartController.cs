@@ -17,6 +17,11 @@ namespace SportsStore.WebUI.Controllers
             repository = repo;
         }
 
+        public ViewResult Checkout()
+        {
+            return View(new ShippingDetails());
+        }
+
         public ViewResult Index(Cart cart,string returnUrl)
         {
             return View(new CartIndexViewModel
@@ -46,15 +51,10 @@ namespace SportsStore.WebUI.Controllers
             return RedirectToAction("Index", new { returnUrl });
         }
 
-        private Cart GetCart()
+        public PartialViewResult Summary(Cart cart)
         {
-            Cart cart = (Cart)Session["Cart"];
-            if(cart== null)
-            {
-                cart = new Cart();
-                Session["Cart"] = cart;
-            }
-            return cart;
+            return PartialView(cart);
         }
+     
     }
 }
